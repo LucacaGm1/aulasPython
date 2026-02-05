@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main(){
+    int m,n,i,j,a,x,y,linha,coluna,x1,y1;
+    printf("insira o m: ");
+    scanf("%d",&m);
+    printf("insira o n: ");
+    scanf("%d", &n);
+    int b=m;
+    int matriz[m][m];
+    for(linha=0;linha<m;linha++){
+        for(coluna=0;coluna<m;coluna++){
+            matriz[linha][coluna]=0;
+        }
+    }
+    for(a=0;a<m;a++){
+        matriz[a][0]= n;
+        matriz[a][m-1]=n;
+        }
+    for(i=0;i<m;i++){
+        for(j=0;j<m;j++){
+            if(i+j==m-1){
+                matriz[i][j]=n;}}}
+    for(x=b-3;x>=0;x--){
+        for(y=1;y<=b-2;y++){
+            if(matriz[x][y]!=n){
+                matriz[x][y]=matriz[x+1][y-1]+matriz[x+1][y];}}}
+    for(x1=2;x1<=m-1;x1++){
+        for(y1=m-2;y1>=1;y1--){
+            if(matriz[x1][y1]==0){
+                matriz[x1][y1]=matriz[x1-1][y1+1]+matriz[x1-1][y1];
+        }
+    }}
+    for(i=0;i<m;i++){
+        for(j=0;j<m;j++){
+            printf("%d ", matriz[i][j]);}
+        printf("\n");}
+
+    return 0;
+}
+
