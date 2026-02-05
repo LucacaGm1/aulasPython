@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main(){
+    int horai=-1, minutoi=-1, horaf=-1, minutof=-1, diferencahora=-1, diferencamin=-1;
+    while (horai>23 || horai<0){
+    printf("Hora de inicio: ");
+    scanf("%d",&horai);
+    }
+    while (minutoi<0 || minutoi>59){
+    printf("Minuto de inicio: ");
+    scanf("%d", &minutoi);
+    }
+    while (horaf>23 || horaf<0){
+    printf("Hora final: ");
+    scanf("%d",&horaf);
+    }
+    while (minutof<0 || minutof>59){
+    printf("Minuto final: ");
+    scanf("%d",&minutof);
+    }
+    diferencahora=horaf-horai;
+    diferencamin=minutof-minutoi;
+    if (diferencahora<0){
+        diferencahora=24-horai+horaf;
+    }
+    if (diferencamin<0){
+        diferencamin=60-minutoi+minutof;
+        diferencahora=diferencahora-1;
+    }
+    printf("%d h:%d min", diferencahora, diferencamin);
+    return 0;
+}
